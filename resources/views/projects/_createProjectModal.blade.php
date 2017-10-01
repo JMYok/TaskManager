@@ -9,15 +9,29 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                <h4 class="modal-title" id="myModalLabel">新建项目</h4>
             </div>
+
+            {!!Form::open(['method'=>'POST','route'=>'projects.store','files'=>'true'])!!}
             <div class="modal-body">
-                ...
+              <div class="form-group">
+                {!!Form::label('name','项目名称')!!}
+                {!!Form::text('name','')!!}
+              </div>
+
+              <div class="form-group">
+                {!!Form::label('thumbnail','项目缩略图')!!}
+                {!!Form::file('thumbnail')!!}
+              </div>
+
+              @include('errors/_errors')
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                {!!Form::submit('提交',['class'=>'btn btn-primary'])!!}
             </div>
+            {!!Form::close()!!}
+
         </div>
     </div>
 </div>
