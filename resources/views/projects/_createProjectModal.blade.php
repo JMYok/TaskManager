@@ -15,12 +15,12 @@
             {!!Form::open(['method'=>'POST','route'=>'projects.store','files'=>'true'])!!}
             <div class="modal-body">
               <div class="form-group">
-                {!!Form::label('name','项目名称')!!}
-                {!!Form::text('name','')!!}
+                {!!Form::label('name','项目名称',['class'=>'control-label'])!!}
+                {!!Form::text('name','',['class'=>'form-control'])!!}
               </div>
 
               <div class="form-group">
-                {!!Form::label('thumbnail','项目缩略图')!!}
+                {!!Form::label('thumbnail','项目缩略图',['class'=>'control-label'])!!}
                 {!!Form::file('thumbnail')!!}
               </div>
 

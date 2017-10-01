@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Repositories\ProjectsRepository;
 use App\Http\Requests\CreateProjectRequest;
 
+
 class ProjectsController extends Controller
 {
   protected $Repo;
