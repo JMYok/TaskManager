@@ -17,7 +17,7 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('user_id');
-            $table->string('thumbnail');  //缩略图
+            $table->string('thumbnail')->nullable();  //缩略图
             $table->timestamps();
         });
     }

@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\ProjectsRepository;
-use App\Http\Requests\CreateProjectRequest;
 
+use App\Http\Requests\CreateProjectRequest;
+use Redirect;
+
+use App\Repositories\ProjectsRepository;
+use App\Project;
 
 class ProjectsController extends Controller
 {
@@ -44,7 +47,7 @@ class ProjectsController extends Controller
     {
       $this->Repo->newproject($request);
 
-      return view('welcome');
+      return Redirect::back();
     }
 
 
@@ -80,7 +83,9 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->Repo->updateproject($request,$id);
+
+        return Redirect::back();
     }
 
     /**
@@ -91,6 +96,8 @@ class ProjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Project::find($id)->delete();
+
+        return Redirect::back();
     }
 }

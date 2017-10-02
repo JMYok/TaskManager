@@ -8,6 +8,16 @@
          <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
             
+            <ul>
+                @include('projects/_deleteForm')
+                <li>
+                    <!-- 模态框触发键 -->
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editModal-{{$project->id}}">
+                     <i class="fa fa-btn fa-cog"></i>
+                    </button>
+                </li>
+            </ul>    
+
             <a href="{{route('projects.show',$project->name)}}">
             <img src="{{asset('/thumbnails/'.$project->thumbnail)}}" alt="{{$project->name}}">
             </a>
@@ -19,6 +29,9 @@
          </a>   
          
          </div>
+
+            @include('projects/_editProjectModal')
+
             </div>
         </div>
             @endforeach

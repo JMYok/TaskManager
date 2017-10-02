@@ -28,7 +28,7 @@
 
             </div>
             <div class="modal-footer">
-                {!!Form::submit('提交',['class'=>'btn btn-primary'])!!}
+                {!!Form::submit('新建项目',['class'=>'btn btn-primary'])!!}
             </div>
             {!!Form::close()!!}
 
